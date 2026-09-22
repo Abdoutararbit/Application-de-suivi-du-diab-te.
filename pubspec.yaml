@@ -1,0 +1,94 @@
+name: gluco_pote
+description: "GlucoPote - Assistant repas pour enfant diabétique. Scan, analyse et journal des glucides."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # ─── UI & Design ────────────────────────────────────────────
+  cupertino_icons: ^1.0.8
+  google_fonts: ^6.2.1          # Typographie enfant (Nunito, Baloo 2)
+  lottie: ^3.1.2                # Animations mascotte
+  fl_chart: ^0.70.2             # Graphiques glucides
+  flutter_animate: ^4.5.0       # Micro-animations fluides
+  shimmer: ^3.0.0               # Loading skeletons
+  gap: ^3.0.1                   # Espacement simplifié
+
+  # ─── State Management ────────────────────────────────────────
+  flutter_riverpod: ^2.6.1      # Gestion d'état réactive
+  riverpod_annotation: ^2.6.1
+
+  # ─── Navigation ──────────────────────────────────────────────
+  go_router: ^14.6.2            # Routing déclaratif avec guards parent
+
+  # ─── Réseau & APIs ───────────────────────────────────────────
+  dio: ^5.7.0                   # Client HTTP robuste
+  connectivity_plus: ^6.1.1     # Détection réseau (offline-first)
+  http: ^1.2.2
+
+  # ─── Caméra & Scan ───────────────────────────────────────────
+  camera: ^0.11.1               # Capture photo du repas
+  mobile_scanner: ^6.0.2        # Scan codes-barres ultra-rapide
+  image_picker: ^1.1.2          # Sélection depuis galerie
+  image: ^4.2.0                 # Traitement d'image côté client
+
+  # ─── Base de données locale (Offline-first) ──────────────────
+  # Drift (anciennement Moor) : alternative moderne à Isar, compatible avec freezed
+  drift: ^2.23.1
+  sqlite3_flutter_libs: ^0.5.29
+  path_provider: ^2.1.5         # Chemin fichiers locaux
+  path: ^1.9.0
+
+  # ─── Firebase ────────────────────────────────────────────────
+  firebase_core: ^3.8.1
+  firebase_auth: ^5.4.1         # Auth famille (email/Google)
+  cloud_firestore: ^5.6.3       # Journal cloud synchronisé
+  firebase_storage: ^12.4.2     # Stockage photos des repas
+  firebase_messaging: ^15.2.2   # Notifications push parents
+
+  # ─── Notifications & Sécurité ────────────────────────────────
+  flutter_local_notifications: ^18.0.1
+  local_auth: ^2.3.0            # Biométrie espace parent
+  flutter_secure_storage: ^9.2.4 # Stockage sécurisé token/pin
+
+  # ─── Accessibilité & UX ──────────────────────────────────────
+  flutter_tts: ^4.2.0           # Lecture vocale pour l'enfant
+  vibration: ^2.0.0             # Feedback haptique
+
+  # ─── Utils ───────────────────────────────────────────────────
+  intl: ^0.19.0                 # Formatage dates/nombres
+  uuid: ^4.5.1                  # Génération IDs uniques
+  equatable: ^2.0.7             # Comparaison d'objets
+  dartz: ^0.10.1                # Programmation fonctionnelle (Either)
+  logger: ^2.5.0                # Logs structurés
+  cached_network_image: ^3.4.1  # Cache images réseau
+  share_plus: ^10.1.4           # Partage rapport PDF
+  pdf: ^3.11.2                  # Export rapport PDF pour médecin
+  freezed_annotation: ^2.4.4    # Annotations pour modèles immutables
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+  # ─── Génération de code ──────────────────────────────────────
+  build_runner: ^2.4.14
+  freezed: ^2.5.7               # Modèles immutables
+  json_serializable: ^6.9.0     # Sérialisation JSON
+  json_annotation: ^4.9.0
+  riverpod_generator: ^2.6.2    # Génération providers Riverpod
+  drift_dev: ^2.23.1            # Génération schémas Drift
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/animations/
+    - assets/icons/
